@@ -1,0 +1,95 @@
+/*
+filename: lab04.css
+author: Ahmed
+created: 16/10/2026
+last modified: 16/10/2026
+description: Typographic and colour styling for lab04.html
+*/
+
+/* ---------- Element selectors ---------- */
+
+/* Universal selector: default font and colour for every element */
+* {
+    font-family: calibri, sans-serif;
+    color: #2F4F4F;
+}
+
+/* Step 3: Heading 1 */
+h1 {
+    color: purple;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Heading 2: teal, bold, 1.5 times the standard size */
+h2 {
+    color: rgb(0, 128, 128);
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* ---------- Group selectors ---------- */
+
+aside, footer {
+    font-style: italic;
+}
+
+/* All headings use Arial */
+h1, h2, h3 {
+    font-family: arial, sans-serif;
+}
+
+/* Border on the table, its header cells and its data cells */
+table, th, td {
+    border: 1px solid black;
+}
+
+/* ---------- ID selectors ---------- */
+
+#images {
+    text-align: center;
+}
+
+/* Matches <h3 id="heading-levels"> in lab04.html */
+#heading-levels {
+    color: red;
+}
+
+/* ---------- Class selectors ---------- */
+
+.special {
+    color: darkorange;
+    font-weight: bold;
+}
+
+/* Matches <th class="month"> on the Jan and Feb headings */
+.month {
+    text-align: right;
+}
+
+/* ---------- Contextual selectors ---------- */
+
+/* Menu links only: no underline, padding and a border */
+nav a {
+    text-decoration: none;
+    padding: 0.2em 0.6em;
+    border: 4px solid #ccc;
+}
+
+/* Unordered lists nested inside an ordered list get square bullets */
+ol ul {
+    list-style-type: square;
+}
+
+/* ---------- Pseudo classes ---------- */
+
+/* Hide the aside when the mouse is over it */
+aside:hover {
+    display: none;
+}
+
+/* Menu items on hover: light blue background, dark blue border */
+nav a:hover {
+    background-color: lightblue;
+    border-color: darkblue;
+}

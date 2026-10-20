@@ -1,0 +1,124 @@
+/*
+filename: layout.css
+author: Ahmed
+created: 20/10/2026
+last modified: 20/10/2026
+description: Layout styling (box model, floats and positioning) for lab05.html
+*/
+
+/* ---------- Step 2: Using multiple CSS files ---------- */
+
+/* Overrides the aside:hover rule in lab04.css (loaded first) so the
+   aside no longer disappears when the mouse moves over it */
+aside:hover {
+    display: block;
+}
+
+/* Each menu item is a <p class="menu">; inline-block puts them on one line */
+.menu {
+    display: inline-block;
+}
+
+/* ---------- Step 3: The CSS box model ---------- */
+
+/* border short form: width style colour. border-radius was introduced in CSS3.
+   Margin and padding use em so they scale with the font size.
+   background: the image path is relative to this CSS file (styles/images/fade.jpg);
+   repeat-x repeats it horizontally only, starting at the top left corner, so the
+   fade runs along the top edge of the aside.
+   Step 4 adds width, float and the optional box-shadow to this same rule. */
+aside {
+    border: 4px inset purple;
+    border-radius: 14px;
+    margin: 1em;
+    padding: 1em;
+    width: 30%;
+    background: url(images/fade.jpg) repeat-x top left;
+    float: right;
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+header {
+    border: 1px solid darkgray;
+    margin: 0.5em;
+    padding: 0.5em;
+    background-color: lightgray;
+    text-align: center;
+}
+
+/* 4px double border on the top edge only; clear:both forces the footer
+   below all the floated sections (Step 4.8) */
+footer {
+    border-top: 4px double darkgray;
+    clear: both;
+}
+
+/* ---------- Step 4: Sizing and positioning boxes ---------- */
+
+/* Lists column on the left, tables column on the right */
+#lists {
+    float: left;
+}
+
+/* margin:auto centres the table in its column */
+table {
+    margin: auto;
+}
+
+#tables {
+    float: right;
+    margin: auto;
+}
+
+/* clear:left pushes hyperlinks below the lists section, then floats it left */
+#hyperlinks {
+    clear: left;
+    float: left;
+}
+
+/* Images section floats right so it sits under the tables section */
+#images {
+    float: right;
+}
+
+figure {
+    border: 2px solid #ccc;
+}
+
+/* Even up the two columns. width is the content width only: these sections
+   have no border, padding or margin, so 50% + 50% still fits */
+#lists, #images, #tables, #hyperlinks {
+    width: 50%;
+    text-align: center;
+}
+
+/* Lists inherit text-align:center from the sections above; put them back */
+ol, ul, dl {
+    text-align: left;
+}
+
+/* Minimum width keeps the article legible in a narrow viewport */
+article {
+    min-width: 30em;
+}
+
+/* ---------- Step 5: Pseudo class selectors ---------- */
+
+/* Contextual selector: every paragraph inside the footer, side by side */
+footer p {
+    display: inline-block;
+    width: 33%;
+}
+
+footer p:first-child {
+    float: left;
+}
+
+footer p:nth-child(2) {
+    text-align: center;
+}
+
+footer p:last-child {
+    float: right;
+    text-align: right;
+}
